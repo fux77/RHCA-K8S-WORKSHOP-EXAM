@@ -12,4 +12,8 @@ kubectl create ns apx-x998-boris ```
 
 Targil 4
 
+kubectl get nodes -o json >> /tmp/nodes-boris ```
+
+Targil 5
+
 
