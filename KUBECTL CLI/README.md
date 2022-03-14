@@ -14,7 +14,7 @@ Targil 4
 
 kubectl get nodes -o json >> /tmp/nodes-boris ```
 
-Targil 5
+#Targil 5
 kubectl create service clusterip messaging-service --tcp 6379:6379 ```
 kubectl label svc messaging-service tier=msg ```
 
