@@ -17,9 +17,8 @@
 5
 
 ``` kubectl create service clusterip messaging-service --tcp 6379:6379 ```
+
 ``` kubectl label svc messaging-service tier=msg ```
 
-
-
-
+6
 
