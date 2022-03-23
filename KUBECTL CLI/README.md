@@ -36,4 +36,4 @@ spec:
       port: 6379
       targetPort: 6379
       
-``` kubectl apply -f messaging-service.yaml ```      
+``` kubectl create -f messaging-service.yaml ```      
