@@ -24,7 +24,7 @@
 
 ## messaging-service.yaml:
 
-apiVersion: v1
+apiVersion: v1     \n
 kind: Service
 metadata:
   name: messaging-service
