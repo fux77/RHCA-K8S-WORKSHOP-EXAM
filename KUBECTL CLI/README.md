@@ -9,7 +9,7 @@
 5   ``` kubectl expose pod messaging --name=messaging-service --port 6379 ```
 
 6
-## messaging-service.yaml-
+## messaging-service.yaml
 
 ```
 apiVersion: v1
