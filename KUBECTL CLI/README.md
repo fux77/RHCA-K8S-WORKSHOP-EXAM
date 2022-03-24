@@ -12,6 +12,7 @@
 6
 ## messaging-service.yaml-
 
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -23,5 +24,6 @@ spec:
     - protocol: TCP
       port: 6379
       targetPort: 6379
+```
       
 ``` kubectl create -f messaging-service.yaml ```      
