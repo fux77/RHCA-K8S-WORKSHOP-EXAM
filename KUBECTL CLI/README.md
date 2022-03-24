@@ -4,10 +4,9 @@
 
 3   ``` kubectl create ns apx-x998-boris ```
 
-4   ``` kubectl get nodes -o json >> /tmp/nodes-boris ```
+4   ``` kubectl get nodes -o json > /tmp/nodes-boris ```
 
-5   ``` kubectl create service clusterip messaging-service --tcp 6379:6379 ```
-    ``` kubectl label svc messaging-service tier=msg ```
+5   ``` kubectl expose pod messaging --name=messaging-service --port 6379 ```
 
 6
 ## messaging-service.yaml-
@@ -24,6 +23,10 @@ spec:
     - protocol: TCP
       port: 6379
       targetPort: 6379
+  selector:
+    tier: msg
 ```
       
-``` kubectl create -f messaging-service.yaml ```      
+``` kubectl create -f messaging-service.yaml ```
+
+7 
