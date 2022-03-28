@@ -31,4 +31,5 @@ spec:
 
 7   ``` kubectl create deploy hr-web-app --image kodekloud/webapp-color --replicas=2 ```
 
+8   ``` 
 
