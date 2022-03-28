@@ -29,7 +29,31 @@ spec:
       
 ``` kubectl apply -f messaging-service.yaml ```
 
-7   ``` kubectl create deploy hr-web-app --image kodekloud/webapp-color --replicas=2 ```
+7 
+## hr-web-app.yaml
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hr-web-app
+  labels:
+    app: hr-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hr-web
+  template:
+    metadata:
+      labels:
+        app: hr-web
+    spec:
+      containers:
+        - name: kodekloud
+          image: kodekloud/webapp-color
+```         
+``` kubectl apply -f hr-web-app.yaml ```
 
 8   ``` 
 
