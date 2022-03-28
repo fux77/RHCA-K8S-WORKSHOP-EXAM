@@ -27,7 +27,7 @@ spec:
     tier: msg
 ```
       
-``` kubectl create -f messaging-service.yaml ```
+``` kubectl apply -f messaging-service.yaml ```
 
 7   ``` kubectl create deploy hr-web-app --image kodekloud/webapp-color --replicas=2 ```
 
