@@ -20,3 +20,14 @@
 
 7  ```  kubectl get pods -l env=prod --show-labels  ```
 
+8  ```  kubectl get pods -l env  ```
+
+9  ```  kubectl get pods -l 'env in (dev,prod)'  ```
+
+10  ```  kubectl get pods -l 'env in (dev,prod)' --show-labels  ```
+
+11  ```  kubectl label pods pod1 env=uat --overwrite  ```
+
+```  kubectl get pods --show-labels  ```
+    
+12  ```      
