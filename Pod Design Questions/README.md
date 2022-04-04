@@ -30,4 +30,15 @@
 
 ```  kubectl get pods --show-labels  ```
     
-12  ```      
+12  ```  kubectl label pods pod{1..5} env-  ```
+
+```  kubectl get pods --show-labels  ```
+
+13  ```  kubectl label pods pod{1..5} app=nginx  ```
+
+```  kubectl get pods --show-labels  ```
+
+14  ```  kubectl get nodes --show-labels  ```
+
+15  ```  kubectl label node ip-172-31-12-235.eu-west-1.compute.internal nodeName=nginxnode  ```
+
