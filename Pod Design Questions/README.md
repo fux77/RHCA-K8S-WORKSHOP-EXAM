@@ -42,3 +42,4 @@
 
 15  ```  kubectl label node ip-172-31-12-235.eu-west-1.compute.internal nodeName=nginxnode  ```
 
+16  ## nginxpod.yaml
