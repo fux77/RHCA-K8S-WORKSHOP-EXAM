@@ -42,4 +42,31 @@
 
 15  ```  kubectl label node ip-172-31-12-235.eu-west-1.compute.internal nodeName=nginxnode  ```
 
-16  ## nginxpod.yaml
+16
+## nginxpod.yaml
+```
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx
+  name: nginx
+spec:
+  nodeSelector:
+    nodeName: nginxnode
+  containers:
+  - image: nginx
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
+
+```
+```  kubectl apply -f nginxpod.yaml  ```
+
+17  ```  kubectl describe pod nginx | grep Node-Selectors  ```
+
+18  ```  kubectl describe pod nginx | grep Labels  ```
