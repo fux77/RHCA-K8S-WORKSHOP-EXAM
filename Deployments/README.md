@@ -41,4 +41,42 @@ status: {}
 
 ```  kubectl get pods -l app=webapp -o yaml > pods-webapp.yaml  ```
 
-5  ```  
+5  ```  kubectl delete deploy webapp  ```
+
+```  kubectl get pods -l app=webapp -w  ```
+
+6
+## webapp.yaml
+
+```
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webapp
+  name: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - image: nginx:1.17.1
+        name: nginx
+        ports:
+        - containerPort: 80        
+        resources: {}
+status: {}
+
+```
+
+
