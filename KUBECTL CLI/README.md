@@ -157,7 +157,7 @@ spec:
     
     ```
     
- ```  kubectl apply -f redis-storage-boris.yaml  ```
+```  kubectl apply -f redis-storage-boris.yaml  ```
  
  
 
