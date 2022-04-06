@@ -155,7 +155,7 @@ spec:
   - name: cache-volume
     emptyDir: {}
     
-    ```
+```
     
 ```  kubectl apply -f redis-storage-boris.yaml  ```
  
