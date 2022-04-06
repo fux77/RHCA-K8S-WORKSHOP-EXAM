@@ -83,4 +83,32 @@ status: {}
 
 ```  kubectl apply -f static-busybox.yaml  ```
 
-9  ```  
+9
+## temp-bus.yaml
+
+```
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: temp-bus
+  name: temp-bus
+  namespace: finance-boris
+spec:
+  containers:
+  - image: redis:alpine
+    name: temp-bus
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
+
+```
+
+```  kubectl create namespace finance-boris  ```
+
+```  kubectl apply -f temp-bus.yaml  ```
+
+
