@@ -134,7 +134,7 @@ metadata:
   creationTimestamp: null
   name: hello-job
 spec:
-  parallelism: 10      
+  completions: 10      
   template:
     metadata:
       creationTimestamp: null
