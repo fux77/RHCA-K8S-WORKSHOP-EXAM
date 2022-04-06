@@ -107,7 +107,7 @@ b.  ```  kubectl rollout undo deploy webapp  ```
 
 ```  kubectl get pods  ```
 
-d.  ```   kubectl rollout history deploy webapp --revision=5  ```
+c.+d.  ```   kubectl rollout history deploy webapp --revision=5  ```
 
 e.  ```  kubectl set image deploy/webapp nginx=nginx:latest  ```
 
