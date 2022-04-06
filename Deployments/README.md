@@ -95,6 +95,18 @@ status: {}
 
 ```  kubectl describe deploy webapp | grep Image  ```
 
-10  ```  
+10  ```  kubectl set image deploy/webapp nginx=nginx:1.100  ```
+
+```  kubectl rollout status deploy webapp  ```
+
+a.  ```   kubectl get pods  ```
+
+b.  ```  kubectl rollout undo deploy webapp  ```
+
+```  kubectl rollout status deploy webapp  ```
+
+```  kubectl get pods  ```
+
+c.  ```  
 
 
