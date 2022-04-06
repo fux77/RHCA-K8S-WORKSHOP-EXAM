@@ -55,5 +55,33 @@ spec:
 ```         
 ``` kubectl apply -f hr-web-app.yaml ```
 
-8   ``` 
+8
+## static-busybox.yaml
+
+```
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: static-busybox
+  name: static-busybox
+spec:
+  containers:
+  - command: ["sleep", "1000"]
+    image: busybox
+    name: static-busybox
+    resources: {}
+  nodeSelector:
+    kubernetes.io/hostname: ip-172-31-15-15.eu-west-1.compute.internal      
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
+```
+
+```  kubectl apply -f static-busybox.yaml  ```
+
+
 
