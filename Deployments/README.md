@@ -79,4 +79,22 @@ status: {}
 
 ```
 
+```  kubectl apply -f webapp.yaml  ```
+
+```  kubectl describe deploy webapp | grep Image  ```
+
+7  ```  kubectl set image deploy/webapp nginx=nginx:1.17.4  ```
+
+```  kubectl describe deploy webapp | grep Image  ```
+
+8  ```  kubectl rollout history deploy webapp  ```
+
+```  kubectl get deploy webapp --show-labels  ```
+
+9  ```  kubectl rollout undo deploy webapp  ```
+
+```  kubectl describe deploy webapp | grep Image  ```
+
+10  ```  
+
 
