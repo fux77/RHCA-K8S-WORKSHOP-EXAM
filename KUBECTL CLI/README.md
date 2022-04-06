@@ -111,4 +111,27 @@ status: {}
 
 ```  kubectl apply -f temp-bus.yaml  ```
 
+10
+## pv-analytics.yaml
+
+```
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-analytics
+spec:  
+  capacity:    
+    storage: 100Mi  
+  accessModes:    
+    - ReadWriteMany  
+  hostPath:    
+    path: /pv/data-analytics
+    
+ ```
+ 
+ ``` kubectl apply -f pv-analytics.yaml  ```
+ 
+ 11
+
 
