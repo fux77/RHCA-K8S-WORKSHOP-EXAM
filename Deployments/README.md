@@ -119,6 +119,36 @@ e.  ```  kubectl set image deploy/webapp nginx=nginx:latest  ```
 
 ```  kubectl get pods -l app=webapp  ```
 
-12  ```
+12  ```  kubectl delete deploy webapp  ```
 
+```  kubectl delete hpa webapp  ```
 
+13
+## hello-job.yaml
+
+```
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  creationTimestamp: null
+  name: hello-job
+spec:
+  parallelism: 10      
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - command:
+        - echo
+        - Hello I am from job
+        image: busybox
+        name: hello-job
+        resources: {}
+      restartPolicy: Never
+status: {}
+
+```
+
+```  kubectl apply -f hello-job.yaml  ```
