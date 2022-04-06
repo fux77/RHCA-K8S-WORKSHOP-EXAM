@@ -133,5 +133,32 @@ spec:
  ``` kubectl apply -f pv-analytics.yaml  ```
  
  11
+ ## redis-storage-boris.yaml
+ 
+ ```
+ 
+ apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: redis-storage-boris
+  name: redis-storage-boris
+spec:
+  containers:
+  - image: redis:alpine
+    name: redis-storage-boris    
+    volumeMounts:    
+    - mountPath: /data/redis
+      name: cache-volume  
+  volumes:  
+  - name: cache-volume
+    emptyDir: {}
+    
+    ```
+    
+ ```  kubectl apply -f redis-storage-boris.yaml  ```
+ 
+ 
 
 
