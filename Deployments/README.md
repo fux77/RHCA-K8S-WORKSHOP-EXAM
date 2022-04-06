@@ -107,6 +107,18 @@ b.  ```  kubectl rollout undo deploy webapp  ```
 
 ```  kubectl get pods  ```
 
-c.  ```  
+d.  ```   kubectl rollout history deploy webapp --revision=5  ```
+
+e.  ```  kubectl set image deploy/webapp nginx=nginx:latest  ```
+
+```  kubectl rollout history deploy webapp  ```
+
+11  ```  kubectl autoscale deploy webapp --min=10 --max=20 --cpu-percent=85  ```
+
+```  kubectl get hpa  ```
+
+```  kubectl get pods -l app=webapp  ```
+
+12  ```
 
 
