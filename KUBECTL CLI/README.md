@@ -83,5 +83,4 @@ status: {}
 
 ```  kubectl apply -f static-busybox.yaml  ```
 
-
-
+9  ```  
