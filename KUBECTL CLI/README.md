@@ -245,6 +245,59 @@ c.  ```  kubectl set image deploy/nginx-deploy nginx=nginx:1.17  ```
 
 ```  kubectl describe deploy nginx-deploy | grep Image  ```
 
+14
+## nginx-resolver.yaml
+
+```
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx-resolver
+  name: nginx-resolver
+spec:
+  containers:
+  - image: nginx
+    name: nginx-resolver
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
+```
+
+```  kubectl apply -f nginx-resolver.yaml  ```
+
+## nginx-resolver-service.yaml
+
+```
+
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx-resolver
+  name: nginx-resolver-service
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: nginx-resolver
+  type: ClusterIP
+status:
+  loadBalancer: {}
+  
+```
+
+```  kubectl apply -f nginx-resolver-service.yaml  ```
+
+
+
 
  
  
