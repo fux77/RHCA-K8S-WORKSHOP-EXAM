@@ -158,6 +158,61 @@ spec:
 ```
     
 ```  kubectl apply -f redis-storage-boris.yaml  ```
+
+12
+## pv-1.yaml
+
+```
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pv-1
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Mi
+      
+```
+
+```  kubectl apply -f pv-1.yaml  ```
+
+## use-pvspec-boris.yaml
+
+```
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: use-pvspec-boris
+  creationTimestamp: null
+  labels:
+    run: use-pv
+spec:
+  volumes:
+   - name: pv-1
+     persistentVolumeClaim:
+      claimName: pv-1
+  containers:
+  - name: use-pv
+    image: nginx
+    volumeMounts:
+    - mountPath: /data
+      name: pv-1
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
+```
+
+```  kubectl apply -f use-pvspec-boris.yaml  ```
+
+```  kubectl describe pod use-pvspec-boris  ```
+
+13
  
  
 
