@@ -303,4 +303,31 @@ status:
 ```  kubectl run test-nslookup --image=busybox:1.28 --rm -it -- nslookup (IP Address).default.pod > /root/nginx-boris.pod  ```
 
 15
+## nginx-critical.yaml
+
+```
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx-critical
+  name: nginx-critical
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: node01
+  containers:
+  - image: nginx
+    name: nginx-critical
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: OnFailure
+status: {}
+
+```
+
+```  kubectl apply -f nginx-critical.yaml  ```
+
+
 
