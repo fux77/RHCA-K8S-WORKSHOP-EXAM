@@ -239,6 +239,12 @@ spec:
         
 ```
 
+```  kubectl apply -f nginx-deploy.yaml  ```
+
+c.  ```  kubectl set image deploy/nginx-deploy nginx=nginx:1.17  ```
+
+```  kubectl describe deploy nginx-deploy | grep Image  ```
+
 
  
  
