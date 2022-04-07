@@ -296,6 +296,12 @@ status:
 
 ```  kubectl apply -f nginx-resolver-service.yaml  ```
 
+```  kubectl run test-nslookup --image=busybox:1.28 --rm -it -- nslookup nginx-resolver-service > /root/nginx-boris.svc  ```
+
+```  kubectl get pod nginx-resolver -o wide  ```
+
+```  kubectl run test-nslookup --image=busybox:1.28 --rm -it -- nslookup (IP).default.pod > /root/nginx-boris.pod  ```
+
 
 
 
