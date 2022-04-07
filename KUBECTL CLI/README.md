@@ -329,5 +329,30 @@ status: {}
 
 ```  kubectl apply -f nginx-critical.yaml  ```
 
+16
+## multi-pod.yaml
 
+```
 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multi-pod
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: IfNotPresent
+    name: alpha
+    env:
+    - name: name
+      value: alpha
+  - image: busybox
+    name: beta
+    env:
+    - name: name
+      value: beta
+    command: ["sleep","4800"]
+    
+    ```
+    
+    ```  kubectl apply -f multi-pod.yaml  ```
